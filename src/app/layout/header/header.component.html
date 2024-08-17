@@ -1,0 +1,32 @@
+<nav>
+  <ul class="menuItems">
+    <li>
+      <img src="/src/assets/Images/Logo.png" width="100px" height="30px" alt="Logo">
+      <a [routerLink]="['/home']" *ngIf="loggedIn">Home</a>
+    </li>
+
+    <div class="rightMenu">
+      <li *ngIf="loggedIn">
+        <form (ngSubmit)="search()">
+          <div class="input-container">
+            <input type="text" placeholder="Search" class="search-input" name="searchTerm" [(ngModel)]="searchTerm">
+          </div>
+        </form>
+      </li>
+      <li class="icon-cart" *ngIf="loggedIn">
+        <span class="material-symbols-outlined">
+          Cart
+        </span>
+        <span class="badge">
+          {{CartNumber}}
+        </span>
+      </li>
+      <li>
+        <a [routerLink]="['/login']" *ngIf="!loggedIn">Log in</a>
+      </li>
+      <li>
+        <a (click)="Logout()" class="cursor-pointer" *ngIf="loggedIn">Logout</a>
+      </li>
+    </div>
+  </ul>
+</nav>

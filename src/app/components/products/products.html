@@ -1,0 +1,106 @@
+<section class="products-page">
+  <div class="breadcrumb">
+    <h2>{{searchTerm}}</h2>
+    <div>
+      <span>Home / </span>
+      <span>Products </span>
+      <span *ngIf="categoryName">/ {{categoryName}} </span>
+      <span *ngIf="searchTerm">/ {{searchTerm}} </span>
+    </div>
+  </div>
+
+  <div class="main">
+    <aside>
+      <h2>
+        Products
+      </h2>
+      <ul>
+        <li>
+          <label [for]="'all'">
+            <input type="radio" name="category" class="custom-radio" [id]="'all'" (ngModelChange)="getAllProducts()"
+              [(ngModel)]="categoryName">
+            <span class="custom-radio"></span>
+            All
+          </label>
+        </li>
+        <li *ngFor="let category of allCategories">
+          <label [for]="category.name">
+            <input type="radio" name="category" class="custom-radio" [value]="category.slug" [(ngModel)]="categoryName"
+              [id]="category.name" (ngModelChange)="getProductsByCategory(category.slug )">
+            <span class="custom-radio"></span>
+            {{category.name}}
+          </label>
+        </li>
+      </ul>
+    </aside>
+
+    <section class="products">
+      <div *ngIf="!isEmpty" style="display: flex; justify-content: space-between; padding: 10px;">
+        <span>
+          ({{this.total}}) Products Found
+        </span>
+      </div>
+      <div class="products-container" *ngIf="!isEmpty">
+        <div class="card" *ngFor="let product of allProducts">
+          <img src="{{product.images[0]}}" alt="product-image">
+          <h3 class="text-header">
+            {{product?.title}}
+          </h3>
+          <p>
+            {{product?.description?.slice(0, 50)}}
+          </p>
+          <span class="discount">
+            -{{product?.discountPercentage}}%
+          </span>
+          <div class="price">
+            <del class="text-header">
+              {{product?.price}} USD
+            </del>
+            <span class="text-header">
+              {{toFixedTwo((product.price - ((product.price * product.discountPercentage)/100)))}} USD
+            </span>
+          </div>
+          <p>
+            <span>Brand</span> : <span class="text-header">{{product?.brand}}</span>
+          </p>
+          <p>
+            <span>category</span> : <span class="text-header">{{product?.category}}</span>
+          </p>
+          <p>
+            <span>In Stock</span> : <span class="text-header">{{product?.stock}}</span>
+          </p>
+          <p
+            style="display: flex; align-items: center; justify-content: end; color: rgba(244,176,0,1);font-weight: 700;">
+            <span class="material-symbols-outlined star">
+              star
+            </span>
+            {{product?.rating}}
+            <span class="minimum-order-quantity">
+              ({{product?.minimumOrderQuantity}})
+            </span>
+          </p>
+          <button class="add-to-cart" (click)="addToCart(product)">
+            {{'Add To Cart' | uppercase}}
+          </button>
+        </div>
+      </div>
+      <div *ngIf="isEmpty">
+        {{'No Products Found' | uppercase}}...
+      </div>
+      <div class="pagination" *ngIf="allProducts.length > 0">
+        <span class="material-symbols-outlined" (click)="goToPreviousPage()" [class.disabled]="currentPage === 1">
+        </span>
+        <span class="pagination-item" *ngFor="let item of paginationNumbers">
+          <span class="pagination-link" [ngClass]="{'active': item === currentPage}" (click)="changePage(item)">
+            <ng-container *ngIf="item !== -1; else dots">
+              {{ item }}
+            </ng-container>
+            <ng-template #dots>...</ng-template>
+          </span>
+        </span>
+        <span class="material-symbols-outlined" (click)="goToNextPage()" [class.disabled]="currentPage === totalPages">
+        </span>
+      </div>
+    </section>
+  </div>
+</section>

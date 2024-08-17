@@ -1,0 +1,35 @@
+<section class="login">
+  <div class="logo">
+    <img src="/src/assets/Images/Logomark.png" alt="Logo">
+  </div>
+
+  <div>
+    <h1>
+      Log in to your account
+    </h1>
+    <p>
+      Welcome back! Please enter your details.
+    </p>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="inputs">
+      <div *ngIf="InvalidUserError">
+        <span class="err-msg">Invalid username or password</span>
+      </div>
+      <div>
+        <label for="email">E-mail</label>
+        <input type="email" placeholder="Enter Your Email" id="email" formControlName="username">
+        <span class="err-msg" *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">user name
+          is required</span>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Your password" id="password" formControlName="password">
+        <span class="err-msg" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">password
+          is required</span>
+      </div>
+      <button class="sign-btn">Sign in</button>
+    </div>
+  </form>
+</section>
