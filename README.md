@@ -1,30 +1,33 @@
-Pleny Task - Angular Frontend Web Developer
-Overview
-This project is a technical assessment for the Angular Frontend Web Developer position at Pleny, Inc. It includes user authentication, product exploration with pagination, search, filtering by category, and basic cart functionality.
+# Pleny Task
 
-Features
-User Authentication: Secure login using the DummyJSON API.
-Product Display: Paginated product list with search and category filtering.
-Cart Management: Add products to the cart and view the total number of items.
-Tech Stack
-Angular 17
-NgRX: Used for state management, including handling authentication, products, and cart states.
-HTML & SCSS: For styling.
-Getting Started
-Clone the repository:
+![Pleny]([https://media.licdn.com/dms/image/D4D0BAQHKeISUPckHSQ/company-logo_200_200/0/1686233842354/maids_cc_logo?e=2147483647&v=beta&t=-rkWgFVLSA5i7g-oWDyhaZrdHfLFcTC4IB_9CLG76_Q](https://media.licdn.com/dms/image/D560BAQFbGOR6N882FQ/company-logo_200_200/0/1681199731700/qurba_io_logo?e=2147483647&v=beta&t=FP4EzPsAVN22cgq_Hc2di5ieGCtK39SztfUKqQU8j7k))
 
-bash
-Copy code
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+
+## Introduction
+The Pleny Task is an Angular application designed to demonstrate frontend development skills
+
+## Features
+-User Authentication: Secure login with the DummyJSON API.
+-Product Display: Paginated product list with search and category filtering.
+-Cart Management: Add products to the cart and view the total number of items.
+-NgRX: State management for handling authentication, products, and cart states.
+
+## Installation
+1. Clone the repository:
+```bash
 git clone https://github.com/Mostafaa133/Pleny-Task.git
 cd Pleny-Task
-Install dependencies:
-
-bash
-Copy code
+```
+2. Install dependencies:
+```bash
 npm install
-Run the application:
-
-bash
-Copy code
+```
+3. Serve the application:
+```bash
 ng serve
-Access it at http://localhost:4200.
+```
+4. Open your browser and navigate to `http://localhost:4200`.
