@@ -1,6 +1,6 @@
 # Pleny Task
 
-![Pleny]([https://media.licdn.com/dms/image/D560BAQFbGOR6N882FQ/company-logo_200_200/0/1681199731700/qurba_io_logo?e=2147483647&v=beta&t=FP4EzPsAVN22cgq_Hc2di5ieGCtK39SztfUKqQU8j7k))
+![Pleny](https://media.licdn.com/dms/image/D560BAQFbGOR6N882FQ/company-logo_200_200/0/1681199731700/qurba_io_logo?e=2147483647&v=beta&t=FP4EzPsAVN22cgq_Hc2di5ieGCtK39SztfUKqQU8j7k)
 
 ## Table of Contents
 - [Introduction](#introduction)
