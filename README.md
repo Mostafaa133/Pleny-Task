@@ -1,6 +1,6 @@
 # Pleny Task
 
-![Pleny]([https://media.licdn.com/dms/image/D4D0BAQHKeISUPckHSQ/company-logo_200_200/0/1686233842354/maids_cc_logo?e=2147483647&v=beta&t=-rkWgFVLSA5i7g-oWDyhaZrdHfLFcTC4IB_9CLG76_Q](https://media.licdn.com/dms/image/D560BAQFbGOR6N882FQ/company-logo_200_200/0/1681199731700/qurba_io_logo?e=2147483647&v=beta&t=FP4EzPsAVN22cgq_Hc2di5ieGCtK39SztfUKqQU8j7k))
+![Pleny]([https://media.licdn.com/dms/image/D560BAQFbGOR6N882FQ/company-logo_200_200/0/1681199731700/qurba_io_logo?e=2147483647&v=beta&t=FP4EzPsAVN22cgq_Hc2di5ieGCtK39SztfUKqQU8j7k))
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -11,10 +11,10 @@
 The Pleny Task is an Angular application designed to demonstrate frontend development skills
 
 ## Features
--User Authentication: Secure login with the DummyJSON API.
--Product Display: Paginated product list with search and category filtering.
--Cart Management: Add products to the cart and view the total number of items.
--NgRX: State management for handling authentication, products, and cart states.
+- User Authentication: Secure login with the DummyJSON API.
+- Product Display: Paginated product list with search and category filtering.
+- Cart Management: Add products to the cart and view the total number of items.
+- NgRX: State management for handling authentication, products, and cart states.
 
 ## Installation
 1. Clone the repository:
